@@ -35,7 +35,7 @@ namespace Api.Controllers
 
 			var ip = HttpContext.Connection.RemoteIpAddress.ToString();
 			ip = ip.Replace(":", "").Replace("f", "");
-			string UrlApi = $"{Request.Scheme}://localhost:{PortaApiTaxaJuros}";
+			string UrlApi = $"{Request.Scheme}://{ip}:{PortaApiTaxaJuros}";
 
 
 			var client = new RestClient(UrlApi);
