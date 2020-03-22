@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  api2:
+    image: dingous/api2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - "api1"
+    ports:
+      - "7979:80" 
+
+  api1:
+    image: dingous/api1
+    ports:
+      - "7878:80" 
+
